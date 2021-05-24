@@ -1,9 +1,9 @@
-from googletrans import Translator
+from googletrans import Translator as T
 import csv
 import os
 
 
-class Translation:
+class Translator:
     def __init__(self, src, dest, path):
         '''
         :param src: source language such as; 'ar' for arabic, 'fi' for french, 'en' for english
@@ -17,7 +17,7 @@ class Translation:
         self.is_translated = True
 
     def __google(self, text):
-        gTran = Translator()
+        gTran = T()
         result = gTran.translate(text, src=self.src, dest=self.dest).text
         return result
 
