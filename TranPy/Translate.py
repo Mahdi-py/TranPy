@@ -13,7 +13,7 @@ class Translator:
         '''
         self.src = src
         self.dest = dest
-        self.stack_trace = inspect.stack()
+        self.__stack_trace = inspect.stack()
         self.path = self.__getpath(path)
         self.data = None
         self.is_translated = True
@@ -21,7 +21,7 @@ class Translator:
     def __getpath(self, path):
         p = path
         csv_path = "{}/{}_{}.csv".format(p, self.src, self.dest)
-        current_path = self.stack_trace[1][1]
+        current_path = self.__stack_trace[1][1]
         splitter = "\\" if "\\" in current_path else "/"
         split_path = current_path.split(splitter)
         path = "{}/{}".format("/".join(split_path[:-1]), csv_path)
