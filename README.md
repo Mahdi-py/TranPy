@@ -8,8 +8,8 @@ to that you don't have any matches. TranPy will use google api to translate your
 ## Example of how to use
 ### adding new translation
 ```python
-from TranPy.Translate import Translation
-t = Translation(src="ar",dest="en", path="Translation")
+from TranPy.Translate import Translator
+t = Translator(src="ar",dest="en", path="Translation")
 t.add("ادخل اسم المستخدم", "Enter username")
 ```
 <strong>src: </strong> source language such as; 'ar' for arabic, 'fi' for french, 'en' for english <br>
