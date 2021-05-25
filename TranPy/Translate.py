@@ -19,6 +19,8 @@ class Translator:
         self.is_translated = True
 
     def __getpath(self, path):
+        if os.path.isabs(path):
+            return "{}/{}_{}.csv".format(path, self.src, self.dest)
         p = path
         csv_path = "{}/{}_{}.csv".format(p, self.src, self.dest)
         current_path = self.__stack_trace[1][1]
