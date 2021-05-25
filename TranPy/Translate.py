@@ -90,3 +90,9 @@ class Translator:
         except:
             translation = self.__google(text)
         return translation
+
+    def flip(self):
+        """
+        this function will flip the translation
+        """
+        self.is_translated = self.is_translated ^ True
