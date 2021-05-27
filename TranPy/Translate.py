@@ -17,6 +17,7 @@ class Translator:
         self.path = self.__getpath(path)
         self.data = None
         self.is_translated = True
+        self.__load_data()
 
     def __getpath(self, path):
         if os.path.isabs(path):
